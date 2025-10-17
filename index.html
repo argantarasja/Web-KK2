@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,22 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- Background audio -->
-    <audio autoplay loop>
-        <source src="judas.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung audio.
+    <audio id="bg-music" loop>
+    <source src="judas.mp3" type="audio/mpeg">
     </audio>
+
+
+    <div id="overlay">
+    <div class="overlay-content">
+        <h1>Selamat Datang</h1>
+        <button id="start-btn">Mulai</button>
+    </div>
+    </div>
+
 
     <div class="parent">
         <!-- Header -->
@@ -32,61 +42,81 @@
         <div class="div2">
             <nav class="sidebar">
                 <button onclick="showContent('dataDiri')"><i class="fas fa-user"></i> <span>Data Diri</span></button>
-                <button onclick="showContent('pengalaman')"><i class="fas fa-briefcase"></i> <span>Pengalaman</span></button>
-                <button onclick="showContent('motivasi')"><i class="fas fa-lightbulb"></i> <span>Motivasi</span></button>
+                <button onclick="showContent('pengalaman')"><i class="fas fa-briefcase"></i>
+                    <span>Pengalaman</span></button>
+                <button onclick="showContent('motivasi')"><i class="fas fa-lightbulb"></i>
+                    <span>Motivasi</span></button>
             </nav>
         </div>
 
         <!-- Body Content -->
         <div class="div3" id="content">
             <div id="dataDiri" class="content-section active">
-                <p>Namaku Ramadhani Wahyu Alif, lahir pada pagi yang tenang di bulan Desember, 
-                    di sebuah kota kecil yang penuh kenangan di Jawa Tengah. Sejak kecil, aku 
-                    selalu penasaran dengan hal-hal yang sederhana bagaimana burung bisa terbang, 
-                    bagaimana komputer bekerja, hingga kenapa matahari selalu muncul dari timur. 
-                    Rasa ingin tahu itu yang akhirnya membentukku menjadi pribadi yang senang belajar, 
-                    mendalami sesuatu sampai ke akar-akarnya, meskipun kadang harus begadang ditemani 
+                <p>Namaku Ramadhani Wahyu Alif, lahir pada pagi yang tenang di bulan Desember,
+                    di sebuah kota kecil yang penuh kenangan di Jawa Tengah. Sejak kecil, aku
+                    selalu penasaran dengan hal-hal yang sederhana bagaimana burung bisa terbang,
+                    bagaimana komputer bekerja, hingga kenapa matahari selalu muncul dari timur.
+                    Rasa ingin tahu itu yang akhirnya membentukku menjadi pribadi yang senang belajar,
+                    mendalami sesuatu sampai ke akar-akarnya, meskipun kadang harus begadang ditemani
                     secangkir teh hangat dan musik pelan di latar belakang.
 
-                    Aku tumbuh dalam keluarga sederhana, di mana nilai kejujuran dan kerja keras selalu 
-                    ditanamkan sejak dini. Ayahku seorang montir, ibuku guru les privat di rumah. Mereka 
-                    bukan hanya orang tua, tapi juga guru kehidupan pertama yang mengajarkanku untuk tidak 
-                    pernah menyerah. Kini aku duduk di bangku SMK, mengambil jurusan Rekayasa Perangkat Lunak. 
+                    Aku tumbuh dalam keluarga sederhana, di mana nilai kejujuran dan kerja keras selalu
+                    ditanamkan sejak dini. Ayahku seorang montir, ibuku guru les privat di rumah. Mereka
+                    bukan hanya orang tua, tapi juga guru kehidupan pertama yang mengajarkanku untuk tidak
+                    pernah menyerah. Kini aku duduk di bangku SMK, mengambil jurusan Rekayasa Perangkat Lunak.
                     Dunia teknologi bukan hanya menarik bagiku, tapi juga terasa seperti rumah kedua.
 
-                    Di sekolah, aku dikenal cukup aktif, baik dalam pelajaran maupun kegiatan organisasi. 
-                    Aku senang berdiskusi, mencoba hal baru, dan tidak takut salah karena bagiku kesalahan 
-                    adalah bagian dari proses belajar. Ketika orang lain menikmati waktu luang dengan game, 
-                    aku lebih sering membuka laptop dan mencoba menulis kode, walau sering kali error dan harus 
-                    diulang dari awal. Tapi di sanalah letak serunya: perjuangan kecil yang suatu hari akan membawa pada keberhasilan besar.</p>
+                    Di sekolah, aku dikenal cukup aktif, baik dalam pelajaran maupun kegiatan organisasi.
+                    Aku senang berdiskusi, mencoba hal baru, dan tidak takut salah karena bagiku kesalahan
+                    adalah bagian dari proses belajar. Ketika orang lain menikmati waktu luang dengan game,
+                    aku lebih sering membuka laptop dan mencoba menulis kode, walau sering kali error dan harus
+                    diulang dari awal. Tapi di sanalah letak serunya: perjuangan kecil yang suatu hari akan membawa pada
+                    keberhasilan besar.</p>
             </div>
             <div id="pengalaman" class="content-section">
-                <p>Pengalaman pertamaku dengan dunia teknologi terjadi saat kelas 8 SMP, ketika aku tanpa sengaja membongkar komputer tua milik paman. 
-                    Alih-alih dimarahi, paman justru mengajakku duduk dan menjelaskan satu per satu fungsi dari perangkat keras yang kubongkar. 
-                    Dari sana, rasa ingin tahu berubah menjadi kecintaan. Aku mulai mencari tutorial di internet, membaca artikel, dan bahkan mencoba 
+                <p>Pengalaman pertamaku dengan dunia teknologi terjadi saat kelas 8 SMP, ketika aku tanpa sengaja
+                    membongkar komputer tua milik paman.
+                    Alih-alih dimarahi, paman justru mengajakku duduk dan menjelaskan satu per satu fungsi dari
+                    perangkat keras yang kubongkar.
+                    Dari sana, rasa ingin tahu berubah menjadi kecintaan. Aku mulai mencari tutorial di internet,
+                    membaca artikel, dan bahkan mencoba
                     membuat website sederhana hanya dengan HTML dan CSS.
 
-                    Saat duduk di kelas 10 SMK, aku bergabung dalam tim lomba web development antar sekolah. Kami hanya punya waktu seminggu untuk 
-                    membangun website profil sekolah yang interaktif. Aku bertanggung jawab di bagian frontend dan konten. Meski tidak juara satu, 
-                    kami mendapatkan penghargaan desain terbaik. Itu adalah kali pertama aku merasa hasil kerjaku dihargai, dan momen itu memotivasiku untuk terus berkembang.
+                    Saat duduk di kelas 10 SMK, aku bergabung dalam tim lomba web development antar sekolah. Kami hanya
+                    punya waktu seminggu untuk
+                    membangun website profil sekolah yang interaktif. Aku bertanggung jawab di bagian frontend dan
+                    konten. Meski tidak juara satu,
+                    kami mendapatkan penghargaan desain terbaik. Itu adalah kali pertama aku merasa hasil kerjaku
+                    dihargai, dan momen itu memotivasiku untuk terus berkembang.
 
-                    Selain lomba, aku juga pernah menjadi panitia seminar teknologi di sekolah, bertindak sebagai tim dokumentasi dan media. Di situ aku belajar 
-                    pentingnya komunikasi dan kerja tim. Tak hanya soal coding, pengalaman itu membuka mataku bahwa menjadi bagian dari sebuah proyek besar bukan 
-                    hanya tentang skill, tapi juga tentang karakter dan cara berinteraksi dengan orang lain. Semua itu membentuk diriku hingga hari ini.</p>
+                    Selain lomba, aku juga pernah menjadi panitia seminar teknologi di sekolah, bertindak sebagai tim
+                    dokumentasi dan media. Di situ aku belajar
+                    pentingnya komunikasi dan kerja tim. Tak hanya soal coding, pengalaman itu membuka mataku bahwa
+                    menjadi bagian dari sebuah proyek besar bukan
+                    hanya tentang skill, tapi juga tentang karakter dan cara berinteraksi dengan orang lain. Semua itu
+                    membentuk diriku hingga hari ini.</p>
             </div>
             <div id="motivasi" class="content-section">
-                <p>Motivasi terbesarku datang dari satu kalimat sederhana yang pernah dikatakan ibuku, “Belajarlah sungguh-sungguh, supaya kamu bisa membuka 
-                    pintu yang tak bisa kami buka.” Kalimat itu menancap kuat di benakku. Aku sadar, pendidikan dan kemampuan adalah jalan terbaik untuk mengubah 
-                    masa depan, bukan hanya untuk diriku sendiri, tapi juga untuk keluargaku. Aku ingin menjadi orang pertama di keluarga yang bekerja di bidang 
+                <p>Motivasi terbesarku datang dari satu kalimat sederhana yang pernah dikatakan ibuku, “Belajarlah
+                    sungguh-sungguh, supaya kamu bisa membuka
+                    pintu yang tak bisa kami buka.” Kalimat itu menancap kuat di benakku. Aku sadar, pendidikan dan
+                    kemampuan adalah jalan terbaik untuk mengubah
+                    masa depan, bukan hanya untuk diriku sendiri, tapi juga untuk keluargaku. Aku ingin menjadi orang
+                    pertama di keluarga yang bekerja di bidang
                     teknologi dan memberi kebanggaan lewat jalur yang kutekuni.
 
-                    Aku percaya bahwa setiap orang punya waktunya masing-masing untuk bersinar. Ada yang cepat, ada yang lambat. Aku mungkin bukan yang paling jenius 
-                    di kelas, tapi aku termasuk yang paling gigih. Ketika gagal, aku tidak menyerah. Aku belajar, mencoba lagi, dan terus berjalan. Bagiku, selama belum 
+                    Aku percaya bahwa setiap orang punya waktunya masing-masing untuk bersinar. Ada yang cepat, ada yang
+                    lambat. Aku mungkin bukan yang paling jenius
+                    di kelas, tapi aku termasuk yang paling gigih. Ketika gagal, aku tidak menyerah. Aku belajar,
+                    mencoba lagi, dan terus berjalan. Bagiku, selama belum
                     menyerah, aku masih punya kesempatan untuk berhasil.
 
-                    Di masa depan, aku ingin menjadi seorang web developer profesional, membangun aplikasi atau sistem yang membantu banyak orang. 
-                    Aku ingin membuat karya yang bukan hanya keren secara visual, tapi juga punya nilai manfaat. Setiap baris kode yang kutulis sekarang 
-                    adalah pondasi kecil menuju mimpi besar itu. Dan aku tahu, selama aku konsisten dan tulus dalam belajar, tak ada yang mustahil untuk dicapai.</p>
+                    Di masa depan, aku ingin menjadi seorang web developer profesional, membangun aplikasi atau sistem
+                    yang membantu banyak orang.
+                    Aku ingin membuat karya yang bukan hanya keren secara visual, tapi juga punya nilai manfaat. Setiap
+                    baris kode yang kutulis sekarang
+                    adalah pondasi kecil menuju mimpi besar itu. Dan aku tahu, selama aku konsisten dan tulus dalam
+                    belajar, tak ada yang mustahil untuk dicapai.</p>
             </div>
         </div>
 
@@ -100,4 +130,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
